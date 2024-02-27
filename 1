@@ -1,0 +1,28 @@
+SELECT *
+FROM projekt2.netflix_titles;
+
+ALTER table netflix_titles 
+drop column Column7;
+
+SELECT *
+FROM projekt2.netflix_titles;
+
+
+/* how many films by countries*/
+
+select count('type'), country 
+from netflix_titles nt 
+group by 2
+order by 1 desc;
+
+/* amount of movies and tv shows*/
+select COUNT(`type`), `type`  
+from netflix_titles nt 
+group by 2
+limit 2;
+
+
+/* Different films which made Rajiv Chilaka*/
+select * 
+from netflix_titles nt 
+where director like '%Rajiv Chilaka%';
